@@ -57,10 +57,10 @@ func _on_chagne_price_timeout() -> void:
 		Global.Sell_price[9] = max(10, sqrt(Global.Sell_price[9]))
 		stonks_change -= 14
 	elif (stonks_change >= 10):
-		Global.Sell_price[9] = randi_range(1,10*Global.Sell_price[9])
+		Global.Sell_price[9] += randi_range(1,10 * Global.Sell_price[9])
 		stonks_change -= 10
 	elif (stonks_change >= 5):
-		Global.Sell_price[9] = randi_range(1,2*Global.Sell_price[9])
+		Global.Sell_price[9] = randi_range(1,2 * Global.Sell_price[9])
 		stonks_change -= 5
 		
 	for i in range(0,10):
