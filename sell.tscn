@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://di3eumvkow6o"]
+
+[ext_resource type="Script" uid="uid://c2y62injpq1l" path="res://sell.gd" id="1_0x7s4"]
+[ext_resource type="Texture2D" uid="uid://pibhvrauci5l" path="res://sell_image/Oak_Planks_JE6_BE3.webp" id="1_nk7x1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0x7s4"]
+bg_color = Color(0.5647059, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27u33"]
+bg_color = Color(0, 0.6, 0, 1)
+
+[node name="Sell" type="Control" unique_id=446594292]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -20.0
+offset_right = 128.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0x7s4")
+
+[node name="Image" type="TextureRect" parent="." unique_id=1495208043]
+layout_mode = 1
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("1_nk7x1")
+
+[node name="Name" type="Label" parent="Image" unique_id=381950931]
+layout_mode = 0
+offset_top = 300.0
+offset_right = 288.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 50
+text = "Plank"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="Label" parent="Image" unique_id=145630507]
+layout_mode = 0
+offset_top = 369.0
+offset_right = 288.0
+offset_bottom = 438.0
+theme_override_font_sizes/font_size = 50
+text = "$ 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buy" type="Button" parent="Image" unique_id=1190616381]
+layout_mode = 0
+offset_top = 448.0
+offset_right = 128.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_0x7s4")
+text = "Buy"
+
+[node name="Sell" type="Button" parent="Image" unique_id=766769801]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 448.0
+offset_right = 280.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_27u33")
+text = "Sell"
+
+[node name="Amount" type="Label" parent="Image" unique_id=897626776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -68.5
+offset_right = 28.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.41960785, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Image/Buy" to="." method="_on_buy_pressed"]
+[connection signal="pressed" from="Image/Sell" to="." method="_on_sell_pressed"]

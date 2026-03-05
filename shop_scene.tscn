@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cb7gm7jplyyf8"]
+
+[ext_resource type="Script" uid="uid://d3tdoui25bc3g" path="res://shop_scene.gd" id="1_42hh6"]
+[ext_resource type="PackedScene" uid="uid://di3eumvkow6o" path="res://sell.tscn" id="2_ylxq0"]
+
+[node name="Shop Scene" type="Control" unique_id=385310144 node_paths=PackedStringArray("first_row", "second_row")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_42hh6")
+sell_card = ExtResource("2_ylxq0")
+first_row = NodePath("1st_Row")
+second_row = NodePath("2nd_Row")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1757491062]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16132346, 0.16625455, 0.17295298, 1)
+
+[node name="1st_Row" type="HBoxContainer" parent="." unique_id=387324981]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -260.0
+offset_right = 160.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="2nd_Row" type="HBoxContainer" parent="." unique_id=1142359155]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = 40.0
+offset_right = 160.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Display_money" type="Label" parent="." unique_id=1536956995]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chagne_Price" type="Timer" parent="." unique_id=1382292181]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Chagne_Price" to="." method="_on_chagne_price_timeout"]
