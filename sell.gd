@@ -37,10 +37,10 @@ func _on_sell_pressed() -> void:
 
 func _on_buy_a_pressed() -> void:
 	if Global.Money >= price_insert:
-		var buy : int = floor(Global.Money / (float)(price_insert))
+		@warning_ignore("integer_division")
+		var buy : int = floor(Global.Money / price_insert)
 		Global.Money -= price_insert * buy
 		update(buy, price_insert)
-		update(1,price_insert)
 		
 
 func _on_sell_a_pressed() -> void:
