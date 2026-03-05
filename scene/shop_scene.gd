@@ -42,24 +42,27 @@ func _ready() -> void:
 		minion_store.add_child(minion_instance)
 
 func _on_chagne_price_timeout() -> void:
-	Global.Sell_price[0] = randi_range(1,5) #Plank
-	Global.Sell_price[1] = randi_range(2,15) #Coppper
-	Global.Sell_price[2] = randi() % 20 #Iron
-	Global.Sell_price[3] = randi_range(2,5) * randi_range(3,5) # Gold
-	Global.Sell_price[4] = (int)(randfn(30,20)) #Diamond
-	Global.Sell_price[5] = (int)(max(10,pow(randfn(0,10),2))) #Emerald
+	Global.Sell_price[0] = randi_range(0,2) #Plank
+	Global.Sell_price[1] = randi_range(4,12) #Coppper
+	Global.Sell_price[2] = randi_range(5,25) #Iron
+	Global.Sell_price[3] = randi_range(2,5) * randi_range(3,6) # Gold
+	Global.Sell_price[4] = (int)(randfn(30,12)) #Diamond
+	Global.Sell_price[5] = (int)(max(10,pow(randfn(0,8),2))) #Emerald
 	Global.Sell_price[6] = (int)(sqrt(randi_range(1,10000))) #Eye
-	var dfrag = randi_range(30,80)
-	Global.Sell_price[7] = (int)(dfrag * log(Global.Sell_price[7]) / 2) #DFrag
-	Global.Sell_price[8] = (int)(max(40,pow(randfn(20,10),1.6))) #Cookie
-	stonks_change += randi_range(1,5) #Stonks
-	if (stonks_change >= 10):
-		Global.Sell_price[9] += randi_range(1,Global.Sell_price[9])
+	var dfrag = randi_range(20,90)
+	Global.Sell_price[7] = (int)(dfrag * log(dfrag)) #DFrag
+	Global.Sell_price[8] = (int)(max(30,pow(randfn(20,10),1.6))) #Cookie
+	stonks_change += randi_range(1,10) #Stonks
+	if (stonks_change >= 14) and (Global.Sell_price[9] > Global.Money * 2):
+		Global.Sell_price[9] = max(10, sqrt(Global.Sell_price[9]))
+		stonks_change -= 14
+	elif (stonks_change >= 10):
+		Global.Sell_price[9] = randi_range(1,10*Global.Sell_price[9])
 		stonks_change -= 10
-		var chance := randi_range(1,10)
-		if chance <= 1 and (Global.Sell_price[9] > Global.Money * 2):
-			Global.Sell_price[9] = max(10, sqrt(Global.Sell_price[9]))
-
+	elif (stonks_change >= 5):
+		Global.Sell_price[9] = randi_range(1,2*Global.Sell_price[9])
+		stonks_change -= 5
+		
 	for i in range(0,10):
 		if Global.Sell_price[i] <= 0:
 			Global.Sell_price[i] = 1
@@ -70,6 +73,6 @@ func _on_chagne_price_timeout() -> void:
 
 func _process(_delta: float) -> void:
 	$Display_money.text = "Money: " + str(Global.Money)
-	if Global.Money >= 100000:
+	if Global.Money >= 5000000:
 		get_tree().change_scene_to_file("res://scene/victory.tscn")
 		
