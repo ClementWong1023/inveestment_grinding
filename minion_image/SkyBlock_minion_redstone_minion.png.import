@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h2tgycmcfyqk"
-path="res://.godot/imported/SkyBlock_sprite_npcs_bazaar.png-8fbec9b53ced14915e0ce3edab67b193.ctex"
+uid="uid://7h1wqxjsxl1"
+path="res://.godot/imported/SkyBlock_minion_redstone_minion.png-851e2162fbe31edee9c0845e05e1e679.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SkyBlock_sprite_npcs_bazaar.png"
-dest_files=["res://.godot/imported/SkyBlock_sprite_npcs_bazaar.png-8fbec9b53ced14915e0ce3edab67b193.ctex"]
+source_file="res://minion_image/SkyBlock_minion_redstone_minion.png"
+dest_files=["res://.godot/imported/SkyBlock_minion_redstone_minion.png-851e2162fbe31edee9c0845e05e1e679.ctex"]
 
 [params]
 

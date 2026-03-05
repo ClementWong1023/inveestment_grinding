@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cgwbh5u1egl71"]
+
+[ext_resource type="Script" uid="uid://cxjr6xcg35836" path="res://scene/global.gd" id="1_2srco"]
+[ext_resource type="Texture2D" uid="uid://pibhvrauci5l" path="res://sell_image/Oak_Planks_JE6_BE3.webp" id="2_xu7o4"]
+[ext_resource type="Texture2D" uid="uid://syvli6l6dg5u" path="res://sell_image/Copper_Ingot_JE2_BE1.webp" id="3_q3a5u"]
+[ext_resource type="Texture2D" uid="uid://cyoycnl05oiwi" path="res://sell_image/Iron_Ingot_JE3_BE2.webp" id="4_ejerv"]
+[ext_resource type="Texture2D" uid="uid://cctt3v7rtquru" path="res://sell_image/Gold_Ingot_JE4_BE2.webp" id="5_cui15"]
+[ext_resource type="Texture2D" uid="uid://bsyt24p1qvhkx" path="res://sell_image/Diamond_JE3_BE3.webp" id="6_mn5cg"]
+[ext_resource type="Texture2D" uid="uid://c3sbx0c7xsbsj" path="res://sell_image/0044a60f9b062cb6bad14cccdc4acf2b.png" id="7_206ok"]
+[ext_resource type="Texture2D" uid="uid://hxl6fkkxqeww" path="res://sell_image/Summoning_Eye.webp" id="8_v2e7f"]
+[ext_resource type="Texture2D" uid="uid://bsc7q2lp7jho6" path="res://sell_image/SkyBlock_items_superior_fragment.png" id="9_hbo06"]
+[ext_resource type="Texture2D" uid="uid://dkbn8ug1n8886" path="res://sell_image/Enchanted_Cookie.webp" id="10_46g6g"]
+[ext_resource type="Texture2D" uid="uid://b1op4jhlvwm72" path="res://sell_image/Paper.webp" id="11_tfmrx"]
+[ext_resource type="Texture2D" uid="uid://b43t4cwxxfylx" path="res://minion_image/SkyBlock_minion_oak_minion.png" id="12_206ok"]
+[ext_resource type="Texture2D" uid="uid://7h1wqxjsxl1" path="res://minion_image/SkyBlock_minion_redstone_minion.png" id="13_206ok"]
+[ext_resource type="Texture2D" uid="uid://cvbcq3rpguox6" path="res://minion_image/SkyBlock_minion_iron_minion.png" id="14_hbo06"]
+[ext_resource type="Texture2D" uid="uid://b1avwrqp1b08h" path="res://minion_image/SkyBlock_minion_gold_minion.png" id="15_46g6g"]
+[ext_resource type="Texture2D" uid="uid://dv06qywlfdgmh" path="res://minion_image/SkyBlock_minion_diamond_minion.png" id="16_tfmrx"]
+[ext_resource type="Texture2D" uid="uid://dkjrg0tx73u" path="res://minion_image/SkyBlock_minion_emerald_minion.png" id="17_x2ksc"]
+
+[node name="Node" type="Node" unique_id=762341593]
+script = ExtResource("1_2srco")
+Sell_stuff_image = Array[Texture2D]([ExtResource("2_xu7o4"), ExtResource("3_q3a5u"), ExtResource("4_ejerv"), ExtResource("5_cui15"), ExtResource("6_mn5cg"), ExtResource("7_206ok"), ExtResource("8_v2e7f"), ExtResource("9_hbo06"), ExtResource("10_46g6g"), ExtResource("11_tfmrx")])
+Sell_stuff_name = Array[String](["Plank", "Copper", "Iron", "Gold", "Diamond", "Emerald", "Eye", "DFrag", "Cookie", "Stocks"])
+Sell_price = Array[int]([1, 5, 10, 15, 20, 25, 40, 60, 100, 5])
+Minion_image = Array[Texture2D]([ExtResource("12_206ok"), ExtResource("13_206ok"), ExtResource("14_hbo06"), ExtResource("15_46g6g"), ExtResource("16_tfmrx"), ExtResource("17_x2ksc")])

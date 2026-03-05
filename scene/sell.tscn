@@ -56,21 +56,40 @@ vertical_alignment = 1
 [node name="Buy" type="Button" parent="Image" unique_id=1190616381]
 layout_mode = 0
 offset_top = 448.0
-offset_right = 128.0
-offset_bottom = 483.0
+offset_right = 152.0
+offset_bottom = 517.0
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_0x7s4")
 text = "Buy"
 
+[node name="Buy_A" type="Button" parent="Image" unique_id=1427636264]
+layout_mode = 0
+offset_top = 532.0
+offset_right = 152.0
+offset_bottom = 601.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_0x7s4")
+text = "Buy_A"
+
 [node name="Sell" type="Button" parent="Image" unique_id=766769801]
 layout_mode = 0
-offset_left = 152.0
+offset_left = 176.0
 offset_top = 448.0
-offset_right = 280.0
-offset_bottom = 483.0
+offset_right = 328.0
+offset_bottom = 517.0
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_27u33")
 text = "Sell"
+
+[node name="Sell_A" type="Button" parent="Image" unique_id=471538567]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 532.0
+offset_right = 328.0
+offset_bottom = 601.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_27u33")
+text = "Sell_A"
 
 [node name="Amount" type="Label" parent="Image" unique_id=897626776]
 layout_mode = 1
@@ -92,4 +111,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Image/Buy" to="." method="_on_buy_pressed"]
+[connection signal="pressed" from="Image/Buy_A" to="." method="_on_buy_a_pressed"]
 [connection signal="pressed" from="Image/Sell" to="." method="_on_sell_pressed"]
+[connection signal="pressed" from="Image/Sell_A" to="." method="_on_sell_a_pressed"]

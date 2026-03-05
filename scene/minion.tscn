@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cukmol3lyhhrf"]
+
+[ext_resource type="Script" uid="uid://cwqmh8vq8maw3" path="res://scene/minion.gd" id="1_w23df"]
+[ext_resource type="Texture2D" uid="uid://b43t4cwxxfylx" path="res://minion_image/SkyBlock_minion_oak_minion.png" id="2_oltgi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w23df"]
+bg_color = Color(0.5647059, 0, 0, 1)
+
+[node name="Minion" type="Control" unique_id=399384425]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 70.0
+script = ExtResource("1_w23df")
+metadata/_edit_use_anchors_ = true
+
+[node name="Image" type="TextureRect" parent="." unique_id=1641641015]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_oltgi")
+
+[node name="Rate" type="Label" parent="Image" unique_id=827839563]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 75.0
+offset_top = -143.0
+offset_right = 835.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Rate : 100 / 5s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Upgrade" type="Button" parent="Image" unique_id=1788286557]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 75.0
+offset_top = -8.0
+offset_right = 835.0
+offset_bottom = 132.99997
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_w23df")
+text = "Upgrade"
+
+[connection signal="pressed" from="Image/Upgrade" to="." method="_on_upgrade_pressed"]

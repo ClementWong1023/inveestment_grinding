@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cb7gm7jplyyf8"]
 
-[ext_resource type="Script" uid="uid://d3tdoui25bc3g" path="res://shop_scene.gd" id="1_42hh6"]
-[ext_resource type="PackedScene" uid="uid://di3eumvkow6o" path="res://sell.tscn" id="2_ylxq0"]
+[ext_resource type="Script" uid="uid://d3tdoui25bc3g" path="res://scene/shop_scene.gd" id="1_42hh6"]
+[ext_resource type="PackedScene" uid="uid://di3eumvkow6o" path="res://scene/sell.tscn" id="2_ylxq0"]
+[ext_resource type="PackedScene" uid="uid://cukmol3lyhhrf" path="res://scene/minion.tscn" id="3_wtbj0"]
 
-[node name="Shop Scene" type="Control" unique_id=385310144 node_paths=PackedStringArray("first_row", "second_row")]
+[node name="Shop Scene" type="Control" unique_id=385310144 node_paths=PackedStringArray("first_row", "second_row", "minion_store")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,8 +13,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_42hh6")
 sell_card = ExtResource("2_ylxq0")
+minion = ExtResource("3_wtbj0")
 first_row = NodePath("1st_Row")
 second_row = NodePath("2nd_Row")
+minion_store = NodePath("Minion_store")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1757491062]
 z_index = -10
@@ -68,5 +71,17 @@ vertical_alignment = 1
 [node name="Chagne_Price" type="Timer" parent="." unique_id=1382292181]
 wait_time = 5.0
 autostart = true
+
+[node name="Minion_store" type="VBoxContainer" parent="." unique_id=2140220727]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.01875
+anchor_top = 0.09583333
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -378.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Chagne_Price" to="." method="_on_chagne_price_timeout"]
