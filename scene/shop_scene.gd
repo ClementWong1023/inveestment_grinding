@@ -67,9 +67,9 @@ func _on_chagne_price_timeout() -> void:
 		if i <= 5:
 			minion_update = minion_stored[i].produce()
 		scene_stored[i].update(minion_update,Global.Sell_price[i])
-		
+
 func _process(_delta: float) -> void:
 	$Display_money.text = "Money: " + str(Global.Money)
 	if Global.Money >= 100000:
-		get_tree().change_scene_to_file("res://victory.tscn")
+		get_tree().change_scene_to_file("res://scene/victory.tscn")
 		
