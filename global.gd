@@ -1,6 +1,6 @@
 extends Node
 
-@onready var Money : int = 100
+@onready var Money : int = 10
 
 @export var Sell_stuff_image : Array[Texture2D] = []
 @export var Sell_stuff_name : Array[String] = []
